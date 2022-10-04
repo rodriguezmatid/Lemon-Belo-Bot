@@ -11,7 +11,7 @@ A Twitter and Telegram bot that shows the price differences of selling your stab
 
 Built using Tweepy, Requests, Telebot, Python and the Twitter API.
 
-## How does it work? ❔
+## How does it work?
 Lemon-Belo Bot will search for the price of your Stablecoins in Lemon and Belo, and will post it 1 time per hour comparing the most convenient for your pocket.
 
 To see one example of tweet, you can visit this [link](https://twitter.com/LemonBeloBot/status/1577320165062184960).
