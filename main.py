@@ -53,7 +53,7 @@ elif BTC_Belo > BTC_BuenBit:
 else:
     conviene_BTC = "🔵"
 
-scrapeo = ("Precios de stables al momento\n"
+scrapeo = ("Precios de venta al momento\n"
                   "$USDC."f"{conviene_USDC} Belo: " f"{USDC_Belo} // Lemon: " f"{USDC_Lemon} // BuenBit: " f"{USDC_BuenBit}\n"
                   "$USDT."f"{conviene_USDT} Belo: " f"{USDT_Belo} // Lemon: " f"{USDT_Lemon} // BuenBit: " f"{USDT_BuenBit}\n"
                   "$DAI. "f"{conviene_DAI} Belo: " f"{DAI_Belo} // Lemon: " f"{DAI_Lemon} // BuenBit: " f"{DAI_BuenBit}\n"
