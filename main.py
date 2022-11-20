@@ -13,29 +13,51 @@ _dotenv.load_dotenv()
 USDC_Belo= round(requests.get('https://criptoya.com/api/belo/USDC/ARS').json()['totalBid'],1)
 USDT_Belo= round(requests.get('https://criptoya.com/api/belo/USDT/ARS').json()['totalBid'],1)
 DAI_Belo= round(requests.get('https://criptoya.com/api/belo/DAI/ARS').json()['totalBid'],1)
+BTC_Belo= round(requests.get('https://criptoya.com/api/belo/BTC/ARS').json()['totalBid'],1)
+
 USDC_Lemon= round(requests.get('https://criptoya.com/api/lemoncash/USDC/ARS').json()['totalBid'],1)
 USDT_Lemon= round(requests.get('https://criptoya.com/api/lemoncash/USDT/ARS').json()['totalBid'],1)
 DAI_Lemon= round(requests.get('https://criptoya.com/api/lemoncash/DAI/ARS').json()['totalBid'],1)
+BTC_Lemon= round(requests.get('https://criptoya.com/api/lemoncash/BTC/ARS').json()['totalBid'],1)
 
-if USDC_Lemon > USDC_Belo:
+USDC_BuenBit = round(requests.get('https://criptoya.com/api/buenbit/USDC/ARS').json()['totalBid'],1)
+USDT_BuenBit = round(requests.get('https://criptoya.com/api/buenbit/USDT/ARS').json()['totalBid'],1)
+DAI_BuenBit = round(requests.get('https://criptoya.com/api/buenbit/DAI/ARS').json()['totalBid'],1)
+BTC_BuenBit = round(requests.get('https://criptoya.com/api/buenbit/BTC/ARS').json()['totalBid'],1)
+
+if (USDC_Lemon > USDC_Belo) & (USDC_Lemon > USDC_BuenBit):
     conviene_USDC = "🍋"
-else:
+elif USDC_Belo > USDC_BuenBit:
     conviene_USDC = "🟣"
+else:
+    conviene_USDC = "🔵"
 
-if USDT_Lemon > USDT_Belo:
+if (USDT_Lemon > USDT_Belo) & (USDT_Lemon > USDT_BuenBit):
     conviene_USDT = "🍋"
-else:
+elif USDT_Belo > USDT_BuenBit:
     conviene_USDT = "🟣"
-
-if DAI_Lemon > DAI_Belo:
-    conviene_DAI = "🍋"
 else:
+    conviene_USDT = "🔵"
+
+if (DAI_Lemon > DAI_Belo) & (DAI_Lemon > DAI_BuenBit):
+    conviene_DAI = "🍋"
+elif DAI_Belo > DAI_BuenBit:
     conviene_DAI = "🟣"
+else:
+    conviene_DAI = "🔵"
+
+if (BTC_Lemon > DAI_Belo) & (BTC_Lemon > BTC_BuenBit):
+    conviene_BTC = "🍋"
+elif BTC_Belo > BTC_BuenBit:
+    conviene_BTC = "🟣"
+else:
+    conviene_BTC = "🔵"
 
 scrapeo = ("Precios de stables al momento\n"
-                  "$USDC."f"{conviene_USDC} Belo: " f"{USDC_Belo} vs Lemon: " f"{USDC_Lemon}\n"
-                  "$USDT."f"{conviene_USDT} Belo: " f"{USDT_Belo} vs Lemon: " f"{USDT_Lemon}\n"
-                  "$DAI. "f"{conviene_DAI} Belo: " f"{DAI_Belo} vs Lemon: " f"{DAI_Lemon}")
+                  "$USDC."f"{conviene_USDC} Belo: " f"{USDC_Belo} // Lemon: " f"{USDC_Lemon} // BuenBit: " f"{USDC_BuenBit}\n"
+                  "$USDT."f"{conviene_USDT} Belo: " f"{USDT_Belo} // Lemon: " f"{USDT_Lemon} // BuenBit: " f"{USDT_BuenBit}\n"
+                  "$DAI. "f"{conviene_DAI} Belo: " f"{DAI_Belo} // Lemon: " f"{DAI_Lemon} // BuenBit: " f"{DAI_BuenBit}\n"
+                  "$BTC. "f"{conviene_BTC} Belo: " f"{BTC_Belo} // Lemon: " f"{BTC_Lemon} // BuenBit: " f"{BTC_BuenBit}")
 
 #############################################################################################################################################################
 ########################################################################## TWITTER ##########################################################################
